@@ -11,7 +11,7 @@ accessKey: ECkiasHGiQwNLkvfg4xY
 # ======================
 # The following capabilities are used to set up reporting on BrowserStack:
 # Set 'projectName' to the name of your project. Example, Marketing Website
-projectName: BrowserStack Nathan 
+projectName: BrowserStack Samples 
 # Set `buildName` as the name of the job / testsuite being run
 buildName: browserstack build 
 # `buildIdentifier` is a unique id to differentiate every execution that gets appended to
@@ -20,9 +20,6 @@ buildName: browserstack build
 # ${DATE_TIME}: Generates a Timestamp with every execution. Eg. 05-Nov-19:30
 # Read more about buildIdentifiers here -> https://www.browserstack.com/docs/automate/selenium/organize-tests
 buildIdentifier: '#${BUILD_NUMBER}' # Supports strings along with either/both ${expression}
-testObservability: false
-disableAutoCaptureLogs: true
-disableObservability: true
 
 # =======================================
 # Platforms (Browsers / Devices to test)
@@ -44,7 +41,7 @@ platforms:
 # ==========================================
 # Set browserStackLocal to true if your website under test is not accessible publicly over the internet
 # Learn more about how BrowserStack Local works here -> https://www.browserstack.com/docs/automate/selenium/local-testing-introduction
-browserstackLocal: false # <boolean> (Default false)
+browserstackLocal: true # <boolean> (Default false)
 # browserStackLocalOptions:
 # Options to be passed to BrowserStack local in-case of advanced configurations
   # localIdentifier: # <string> (Default: null) Needed if you need to run multiple instances of local.

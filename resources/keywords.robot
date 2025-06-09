@@ -27,7 +27,6 @@ Abrir Aplicativo Local
 
 Abrir Aplicativo BrowserStack
     Open Application    ${REMOTE_URL_BSTACK}
-    # ❗NÃO definir capabilities aqui — o SDK do BrowserStack cuida disso via browserstack.yml
-
+    
 Fechar Aplicativo
     Close Application
