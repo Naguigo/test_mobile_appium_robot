@@ -19,6 +19,9 @@ cp .env.example .env
 
 
 ## Execução local
+faça download na pasta app do apk e salve na maquina
+troque no arquivo resources/keywords.robot o path 
+ /Users/seuuser/caminho/app-debug.apk
 
 python -m venv venv
 (em outro terminal) appium
