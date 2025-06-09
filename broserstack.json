@@ -1,0 +1,11 @@
+{
+    "server": "hub-cloud.browserstack.com",
+    "user": "nathanguilherme_Gzihyx",
+    "key": "ECkiasHGiQwNLkvfg4xY",
+    "capabilities": {
+      "platformName": "Android",
+      "deviceName": "Google Pixel 6",
+      "app": "bs://79b2d23cdce01868692b1478e74bf611425957ac",
+      "automationName": "UiAutomator2"
+    }
+  }
