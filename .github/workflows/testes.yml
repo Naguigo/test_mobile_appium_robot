@@ -25,6 +25,6 @@ jobs:
           # ou instale diretamente:
           # pip install robotframework Appium-Python-Client robotframework-appiumlibrary
 
-      - name: Rodar testes Robot
+      - name: Run tests via BrowserStack SDK
         run: |
-          robot tests/
+           npx browserstack-sdk robot tests/

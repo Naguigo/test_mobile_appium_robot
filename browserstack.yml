@@ -56,15 +56,35 @@
 # consoleLogs: errors # <string> Remote browser's console debug levels to be printed (Default: errors)
 # # Available options are `disable`, `errors`, `warnings`, `info`, `verbose` (Default: errors)
 
+# # browserstack.yml
+# browserstackUsername: $BROWSERSTACK_USERNAME
+# browserstackAccessKey: $BROWSERSTACK_ACCESS_KEY
+# app: bs://79b2d23cdce01868692b1478e74bf611425957ac
+# devices:
+#   - deviceName: Samsung Galaxy S22 Ultra
+#     osVersion: 12.0
+#     platformName: android
+# projectName: Projeto Teste Mobile
+# buildName: Build 2.0
+# sessionName: Teste Login App Mobile
+# framework: robot
+
+
 # browserstack.yml
+
 browserstackUsername: $BROWSERSTACK_USERNAME
 browserstackAccessKey: $BROWSERSTACK_ACCESS_KEY
-app: bs://79b2d23cdce01868692b1478e74bf611425957ac
-devices:
-  - deviceName: Samsung Galaxy S22 Ultra
-    osVersion: 12.0
-    platformName: android
-projectName: Projeto Teste Mobile
-buildName: Build 2.0
-sessionName: Teste Login App Mobile
-framework: robot
+
+automate:
+  app: $BROWSERSTACK_APP  # Troque por variável se quiser manter flexível
+  project: Projeto Teste Mobile
+  buildName: Build 2.0
+  sessionName: Teste Login App Mobile
+  framework: robot
+  debug: true
+  devices:
+    - deviceName: Samsung Galaxy S22 Ultra
+      osVersion: 12.0
+      platform: android
+
+
