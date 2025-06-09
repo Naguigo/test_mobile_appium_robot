@@ -20,3 +20,6 @@ python-dotenv
 
 # Outros utilitários úteis
 requests
+
+
+browserstack-sdk>=1.0.0
