@@ -1,5 +1,5 @@
 *** Settings ***
-Library    ../venv/lib/python3.13/site-packages/AppiumLibrary/__init__.py
+Library    AppiumLibrary
 *** Variables ***
 ${USERNAME_FIELD}    id=com.example.testapp:id/username
 ${PASSWORD_FIELD}    id=com.example.testapp:id/password

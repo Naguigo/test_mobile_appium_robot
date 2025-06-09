@@ -1,4 +1,22 @@
-robotframework 
-robotframework-appiumlibrary 
 pytest
 python-dotenv
+
+# Robot Framework core
+robotframework>=6.0.2
+
+# Appium support
+robotframework-appiumlibrary>=1.6.0
+Appium-Python-Client>=2.0.0
+
+# BrowserStack SDK
+browserstack-local
+browserstack-sdk
+
+# Parallel execution (opcional, mas recomendado)
+robotframework-pabot
+
+# Suporte a arquivos .env (se estiver usando variáveis de ambiente no .env)
+python-dotenv
+
+# Outros utilitários úteis
+requests

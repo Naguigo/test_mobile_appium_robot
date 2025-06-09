@@ -1,5 +1,5 @@
 *** Settings ***
-Library    ../venv/lib/python3.13/site-packages/AppiumLibrary/__init__.py
+Library    AppiumLibrary
 *** Variables ***
 ${NOME_FIELD}        id=com.example.testapp:id/name
 ${EMAIL_FIELD}       id=com.example.testapp:id/email
