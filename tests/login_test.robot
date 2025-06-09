@@ -4,7 +4,7 @@ Library    ../load_env.py
 Resource          ../pages/LoginPage.robot
 Resource    ../resources/keywords.robot
 
-#Suite Setup       Abrir Aplicativo
+Suite Setup       Abrir Aplicativo
 Suite Teardown    Fechar Aplicativo
 
 *** Test Cases ***
