@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Checkout código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Instalar dependências
         run: |
@@ -25,6 +25,8 @@ jobs:
           # ou instale diretamente:
           # pip install robotframework Appium-Python-Client robotframework-appiumlibrary
 
-      - name: Run tests via BrowserStack SDK
-        run: |
-           npx browserstack-sdk robot tests/
+      - name: Install BrowserStack SDK
+        run: npm install @browserstack/test-observability-sdk
+
+      - name: Run Robot tests via BrowserStack SDK
+        run: npx @browserstack/test-observability-sdk robot tests/

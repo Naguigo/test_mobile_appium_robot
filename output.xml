@@ -1,18 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Rebot 7.3 (Python 3.13.4 on darwin)" generated="2025-06-08T23:42:01.456235" rpa="false" schemaversion="5">
-<suite id="s1" name="Tests" source="/Users/nathanguilherme/Desktop/pluxe/4. Testes Automatizados para Aplicativos Móveis/test_mobile_appium_robot/tests">
+<robot generator="Rebot 7.3 (Python 3.13.4 on darwin)" generated="2025-06-09T11:02:20.547983" rpa="false" schemaversion="5">
+<suite id="s1" name="Form Test &amp; Login Test &amp; Form Test 12.0, Samsung Galaxy S22 Ultra, chrome &amp; Login Test 12.0, Samsung Galaxy S22 Ultra, chrome">
 <suite id="s1-s1" name="Form Test" source="/Users/nathanguilherme/Desktop/pluxe/4. Testes Automatizados para Aplicativos Móveis/test_mobile_appium_robot/tests/form_test.robot">
 <kw name="Abrir Aplicativo" owner="keywords" type="SETUP">
-<kw name="Open Application" owner="AppiumLibrary">
-<msg time="2025-06-08T23:41:53.062407" level="INFO">Completed setup!</msg>
-<kw name="Capture Page Screenshot" owner="AppiumLibrary">
-<msg time="2025-06-08T23:41:53.827730" level="FAIL">No application is open</msg>
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<status status="FAIL" start="2025-06-08T23:41:53.825928" elapsed="0.015228">No application is open</status>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:36.559390" level="INFO">${TEST_ENV} = browserstack</msg>
+<var>${TEST_ENV}</var>
+<arg>TEST_ENV</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.559134" elapsed="0.000528"/>
 </kw>
-<msg time="2025-06-08T23:41:53.844238" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg time="2025-06-08T23:41:53.845581" level="FAIL">Driver capabilities must be defined</msg>
-<arg>https://hub-cloud.browserstack.com/wd/hub</arg>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Abrir Aplicativo BrowserStack" owner="keywords">
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:36.560503" level="INFO">${BROWSERSTACK_USERNAME} = nathanguilherme_Gzihyx</msg>
+<var>${BROWSERSTACK_USERNAME}</var>
+<arg>BROWSERSTACK_USERNAME</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.560331" elapsed="0.000422"/>
+</kw>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:36.561312" level="INFO">${BROWSERSTACK_ACCESS_KEY} = ECkiasHGiQwNLkvfg4xY</msg>
+<var>${BROWSERSTACK_ACCESS_KEY}</var>
+<arg>BROWSERSTACK_ACCESS_KEY</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.561156" elapsed="0.000392"/>
+</kw>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:36.562114" level="INFO">${BROWSERSTACK_APP} = bs://79b2d23cdce01868692b1478e74bf611425957ac</msg>
+<var>${BROWSERSTACK_APP}</var>
+<arg>BROWSERSTACK_APP</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.561951" elapsed="0.000419"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-09T11:01:36.562910" level="INFO">Usando BrowserStack com usuário: nathanguilherme_Gzihyx</msg>
+<arg>Usando BrowserStack com usuário: ${BROWSERSTACK_USERNAME}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.562753" elapsed="0.000400"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-09T11:01:36.563683" level="INFO">App BrowserStack: bs://79b2d23cdce01868692b1478e74bf611425957ac</msg>
+<arg>App BrowserStack: ${BROWSERSTACK_APP}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.563532" elapsed="0.000394"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-09T11:01:36.564632" level="INFO">&amp;{desired_caps} = { platformName=Android | deviceName=Google Pixel 6 | platformVersion=12.0 | app=bs://79b2d23cdce01868692b1478e74bf611425957ac | automationName=UiAutomator2 | browserstack.user=nathanguilherme_Gzihyx |...</msg>
+<var>&amp;{desired_caps}</var>
+<arg>platformName=Android</arg>
+<arg>deviceName=${DEVICE_BSTACK}</arg>
+<arg>platformVersion=${OS_VERSION_BSTACK}</arg>
+<arg>app=${BROWSERSTACK_APP}</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>browserstack.user=${BROWSERSTACK_USERNAME}</arg>
+<arg>browserstack.key=${BROWSERSTACK_ACCESS_KEY}</arg>
+<arg>browserstack.debug=true</arg>
+<arg>browserstack.networkLogs=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.564312" elapsed="0.000569"/>
+</kw>
+<kw name="Open Application" owner="AppiumLibrary">
+<msg time="2025-06-09T11:01:36.567259" level="INFO">Completed setup!</msg>
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2025-06-09T11:01:37.777466" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2025-06-09T11:01:37.776194" elapsed="0.011895">No application is open</status>
+</kw>
+<msg time="2025-06-09T11:01:37.791674" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2025-06-09T11:01:37.792977" level="FAIL">Driver capabilities must be defined</msg>
+<arg>${REMOTE_URL_BSTACK}</arg>
+<arg>desired_capabilities=${desired_caps}</arg>
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
 Please check https://appium.io/docs/en/2.1/cli/args/
@@ -20,19 +78,32 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="FAIL" start="2025-06-08T23:41:53.060504" elapsed="0.786698">Driver capabilities must be defined</status>
+<status status="FAIL" start="2025-06-09T11:01:36.565280" elapsed="1.229346">Driver capabilities must be defined</status>
 </kw>
-<status status="FAIL" start="2025-06-08T23:41:53.059793" elapsed="0.788135">Driver capabilities must be defined</status>
+<status status="FAIL" start="2025-06-09T11:01:36.560165" elapsed="1.235916">Driver capabilities must be defined</status>
+</kw>
+<arg>'${TEST_ENV}' == 'local'</arg>
+<arg>Abrir Aplicativo Local</arg>
+<arg>ELSE IF</arg>
+<arg>'${TEST_ENV}' == 'browserstack'</arg>
+<arg>Abrir Aplicativo BrowserStack</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Variável TEST_ENV inválida: ${TEST_ENV}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2025-06-09T11:01:36.559881" elapsed="1.237589">Driver capabilities must be defined</status>
+</kw>
+<status status="FAIL" start="2025-06-09T11:01:36.558312" elapsed="1.239736">Driver capabilities must be defined</status>
 </kw>
 <test id="s1-s1-t1" name="Fazer login com sucesso" line="13">
-<status status="FAIL" start="2025-06-08T23:41:53.849103" elapsed="0.001267">Parent suite setup failed:
+<status status="FAIL" start="2025-06-09T11:01:37.799407" elapsed="0.001466">Parent suite setup failed:
 Driver capabilities must be defined
 
 Also parent suite teardown failed:
 No application is open</status>
 </test>
 <test id="s1-s1-t2" name="Preencher e enviar formulário" line="21">
-<status status="FAIL" start="2025-06-08T23:41:53.851182" elapsed="0.001058">Parent suite setup failed:
+<status status="FAIL" start="2025-06-09T11:01:37.801743" elapsed="0.001070">Parent suite setup failed:
 Driver capabilities must be defined
 
 Also parent suite teardown failed:
@@ -41,18 +112,18 @@ No application is open</status>
 <kw name="Fechar Aplicativo" owner="keywords" type="TEARDOWN">
 <kw name="Close Application" owner="AppiumLibrary">
 <kw name="Capture Page Screenshot" owner="AppiumLibrary">
-<msg time="2025-06-08T23:41:53.855383" level="FAIL">No application is open</msg>
+<msg time="2025-06-09T11:01:37.806009" level="FAIL">No application is open</msg>
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<status status="FAIL" start="2025-06-08T23:41:53.855002" elapsed="0.002754">No application is open</status>
+<status status="FAIL" start="2025-06-09T11:01:37.805622" elapsed="0.001898">No application is open</status>
 </kw>
-<msg time="2025-06-08T23:41:53.859577" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg time="2025-06-08T23:41:53.860204" level="FAIL">No application is open</msg>
+<msg time="2025-06-09T11:01:37.809386" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2025-06-09T11:01:37.809985" level="FAIL">No application is open</msg>
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="FAIL" start="2025-06-08T23:41:53.854500" elapsed="0.006595">No application is open</status>
+<status status="FAIL" start="2025-06-09T11:01:37.805130" elapsed="0.005694">No application is open</status>
 </kw>
-<status status="FAIL" start="2025-06-08T23:41:53.853319" elapsed="0.008178">No application is open</status>
+<status status="FAIL" start="2025-06-09T11:01:37.803924" elapsed="0.007285">No application is open</status>
 </kw>
-<status status="FAIL" start="2025-06-08T23:41:53.050000" elapsed="0.798000">Suite setup failed:
+<status status="FAIL" start="2025-06-09T11:01:36.548000" elapsed="1.249000">Suite setup failed:
 Driver capabilities must be defined
 
 Also suite teardown failed:
@@ -60,16 +131,74 @@ No application is open</status>
 </suite>
 <suite id="s1-s2" name="Login Test" source="/Users/nathanguilherme/Desktop/pluxe/4. Testes Automatizados para Aplicativos Móveis/test_mobile_appium_robot/tests/login_test.robot">
 <kw name="Abrir Aplicativo" owner="keywords" type="SETUP">
-<kw name="Open Application" owner="AppiumLibrary">
-<msg time="2025-06-08T23:41:57.172137" level="INFO">Completed setup!</msg>
-<kw name="Capture Page Screenshot" owner="AppiumLibrary">
-<msg time="2025-06-08T23:41:59.201387" level="FAIL">No application is open</msg>
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<status status="FAIL" start="2025-06-08T23:41:59.199828" elapsed="0.008192">No application is open</status>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:41.768339" level="INFO">${TEST_ENV} = browserstack</msg>
+<var>${TEST_ENV}</var>
+<arg>TEST_ENV</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:41.768112" elapsed="0.000497"/>
 </kw>
-<msg time="2025-06-08T23:41:59.211653" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg time="2025-06-08T23:41:59.213024" level="FAIL">Driver capabilities must be defined</msg>
-<arg>https://hub-cloud.browserstack.com/wd/hub</arg>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Abrir Aplicativo BrowserStack" owner="keywords">
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:41.769565" level="INFO">${BROWSERSTACK_USERNAME} = nathanguilherme_Gzihyx</msg>
+<var>${BROWSERSTACK_USERNAME}</var>
+<arg>BROWSERSTACK_USERNAME</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:41.769372" elapsed="0.000537"/>
+</kw>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:41.770552" level="INFO">${BROWSERSTACK_ACCESS_KEY} = ECkiasHGiQwNLkvfg4xY</msg>
+<var>${BROWSERSTACK_ACCESS_KEY}</var>
+<arg>BROWSERSTACK_ACCESS_KEY</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:41.770363" elapsed="0.000462"/>
+</kw>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:41.771420" level="INFO">${BROWSERSTACK_APP} = bs://79b2d23cdce01868692b1478e74bf611425957ac</msg>
+<var>${BROWSERSTACK_APP}</var>
+<arg>BROWSERSTACK_APP</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:41.771267" elapsed="0.000381"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-09T11:01:41.772173" level="INFO">Usando BrowserStack com usuário: nathanguilherme_Gzihyx</msg>
+<arg>Usando BrowserStack com usuário: ${BROWSERSTACK_USERNAME}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-09T11:01:41.772020" elapsed="0.000399"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-09T11:01:41.772942" level="INFO">App BrowserStack: bs://79b2d23cdce01868692b1478e74bf611425957ac</msg>
+<arg>App BrowserStack: ${BROWSERSTACK_APP}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-09T11:01:41.772792" elapsed="0.000385"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-09T11:01:41.773867" level="INFO">&amp;{desired_caps} = { platformName=Android | deviceName=Google Pixel 6 | platformVersion=12.0 | app=bs://79b2d23cdce01868692b1478e74bf611425957ac | automationName=UiAutomator2 | browserstack.user=nathanguilherme_Gzihyx |...</msg>
+<var>&amp;{desired_caps}</var>
+<arg>platformName=Android</arg>
+<arg>deviceName=${DEVICE_BSTACK}</arg>
+<arg>platformVersion=${OS_VERSION_BSTACK}</arg>
+<arg>app=${BROWSERSTACK_APP}</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>browserstack.user=${BROWSERSTACK_USERNAME}</arg>
+<arg>browserstack.key=${BROWSERSTACK_ACCESS_KEY}</arg>
+<arg>browserstack.debug=true</arg>
+<arg>browserstack.networkLogs=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-09T11:01:41.773549" elapsed="0.000557"/>
+</kw>
+<kw name="Open Application" owner="AppiumLibrary">
+<msg time="2025-06-09T11:01:41.776467" level="INFO">Completed setup!</msg>
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2025-06-09T11:01:43.840951" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2025-06-09T11:01:43.839047" elapsed="0.007914">No application is open</status>
+</kw>
+<msg time="2025-06-09T11:01:43.853286" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2025-06-09T11:01:43.856092" level="FAIL">Driver capabilities must be defined</msg>
+<arg>${REMOTE_URL_BSTACK}</arg>
+<arg>desired_capabilities=${desired_caps}</arg>
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
 Please check https://appium.io/docs/en/2.1/cli/args/
@@ -77,12 +206,25 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="FAIL" start="2025-06-08T23:41:57.170216" elapsed="2.044757">Driver capabilities must be defined</status>
+<status status="FAIL" start="2025-06-09T11:01:41.774492" elapsed="2.083837">Driver capabilities must be defined</status>
 </kw>
-<status status="FAIL" start="2025-06-08T23:41:57.169387" elapsed="2.046339">Driver capabilities must be defined</status>
+<status status="FAIL" start="2025-06-09T11:01:41.769103" elapsed="2.091276">Driver capabilities must be defined</status>
+</kw>
+<arg>'${TEST_ENV}' == 'local'</arg>
+<arg>Abrir Aplicativo Local</arg>
+<arg>ELSE IF</arg>
+<arg>'${TEST_ENV}' == 'browserstack'</arg>
+<arg>Abrir Aplicativo BrowserStack</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Variável TEST_ENV inválida: ${TEST_ENV}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2025-06-09T11:01:41.768831" elapsed="2.092764">Driver capabilities must be defined</status>
+</kw>
+<status status="FAIL" start="2025-06-09T11:01:41.767366" elapsed="2.094767">Driver capabilities must be defined</status>
 </kw>
 <test id="s1-s2-t1" name="Login com sucesso" line="11">
-<status status="FAIL" start="2025-06-08T23:41:59.217068" elapsed="0.002715">Parent suite setup failed:
+<status status="FAIL" start="2025-06-09T11:01:43.863474" elapsed="0.001634">Parent suite setup failed:
 Driver capabilities must be defined
 
 Also parent suite teardown failed:
@@ -91,44 +233,461 @@ No application is open</status>
 <kw name="Fechar Aplicativo" owner="keywords" type="TEARDOWN">
 <kw name="Close Application" owner="AppiumLibrary">
 <kw name="Capture Page Screenshot" owner="AppiumLibrary">
-<msg time="2025-06-08T23:41:59.223641" level="FAIL">No application is open</msg>
+<msg time="2025-06-09T11:01:43.868789" level="FAIL">No application is open</msg>
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<status status="FAIL" start="2025-06-08T23:41:59.223244" elapsed="0.003152">No application is open</status>
+<status status="FAIL" start="2025-06-09T11:01:43.868402" elapsed="0.001886">No application is open</status>
 </kw>
-<msg time="2025-06-08T23:41:59.228477" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg time="2025-06-08T23:41:59.229227" level="FAIL">No application is open</msg>
+<msg time="2025-06-09T11:01:43.872161" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2025-06-09T11:01:43.872774" level="FAIL">No application is open</msg>
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="FAIL" start="2025-06-08T23:41:59.222750" elapsed="0.007522">No application is open</status>
+<status status="FAIL" start="2025-06-09T11:01:43.867909" elapsed="0.005751">No application is open</status>
 </kw>
-<status status="FAIL" start="2025-06-08T23:41:59.221305" elapsed="0.009428">No application is open</status>
+<status status="FAIL" start="2025-06-09T11:01:43.866523" elapsed="0.007531">No application is open</status>
 </kw>
-<status status="FAIL" start="2025-06-08T23:41:57.161672" elapsed="2.069868">Suite setup failed:
+<status status="FAIL" start="2025-06-09T11:01:41.759508" elapsed="2.115342">Suite setup failed:
 Driver capabilities must be defined
 
 Also suite teardown failed:
 No application is open</status>
 </suite>
-<doc>[https://pabot.org/?ref=log|Pabot] result from 2 executions.</doc>
-<status status="FAIL" start="2025-06-08T23:41:53.045000" elapsed="6.187000"/>
+<suite id="s1-s3" name="Form Test 12.0, Samsung Galaxy S22 Ultra, chrome" source="/Users/nathanguilherme/Desktop/pluxe/4. Testes Automatizados para Aplicativos Móveis/test_mobile_appium_robot/tests/form_test.robot">
+<kw name="Abrir Aplicativo" owner="keywords" type="SETUP">
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:36.559382" level="INFO">${TEST_ENV} = browserstack</msg>
+<var>${TEST_ENV}</var>
+<arg>TEST_ENV</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.559130" elapsed="0.000520"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Abrir Aplicativo BrowserStack" owner="keywords">
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:36.560487" level="INFO">${BROWSERSTACK_USERNAME} = nathanguilherme_Gzihyx</msg>
+<var>${BROWSERSTACK_USERNAME}</var>
+<arg>BROWSERSTACK_USERNAME</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.560318" elapsed="0.000422"/>
+</kw>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:36.561293" level="INFO">${BROWSERSTACK_ACCESS_KEY} = ECkiasHGiQwNLkvfg4xY</msg>
+<var>${BROWSERSTACK_ACCESS_KEY}</var>
+<arg>BROWSERSTACK_ACCESS_KEY</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.561135" elapsed="0.000394"/>
+</kw>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:36.562089" level="INFO">${BROWSERSTACK_APP} = bs://79b2d23cdce01868692b1478e74bf611425957ac</msg>
+<var>${BROWSERSTACK_APP}</var>
+<arg>BROWSERSTACK_APP</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.561927" elapsed="0.000418"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-09T11:01:36.562884" level="INFO">Usando BrowserStack com usuário: nathanguilherme_Gzihyx</msg>
+<arg>Usando BrowserStack com usuário: ${BROWSERSTACK_USERNAME}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.562728" elapsed="0.000398"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-09T11:01:36.563651" level="INFO">App BrowserStack: bs://79b2d23cdce01868692b1478e74bf611425957ac</msg>
+<arg>App BrowserStack: ${BROWSERSTACK_APP}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.563505" elapsed="0.000386"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-09T11:01:36.564587" level="INFO">&amp;{desired_caps} = { platformName=Android | deviceName=Google Pixel 6 | platformVersion=12.0 | app=bs://79b2d23cdce01868692b1478e74bf611425957ac | automationName=UiAutomator2 | browserstack.user=nathanguilherme_Gzihyx |...</msg>
+<var>&amp;{desired_caps}</var>
+<arg>platformName=Android</arg>
+<arg>deviceName=${DEVICE_BSTACK}</arg>
+<arg>platformVersion=${OS_VERSION_BSTACK}</arg>
+<arg>app=${BROWSERSTACK_APP}</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>browserstack.user=${BROWSERSTACK_USERNAME}</arg>
+<arg>browserstack.key=${BROWSERSTACK_ACCESS_KEY}</arg>
+<arg>browserstack.debug=true</arg>
+<arg>browserstack.networkLogs=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.564271" elapsed="0.000563"/>
+</kw>
+<kw name="Open Application" owner="AppiumLibrary">
+<msg time="2025-06-09T11:01:36.567200" level="INFO">Completed setup!</msg>
+<arg>${REMOTE_URL_BSTACK}</arg>
+<arg>desired_capabilities=${desired_caps}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-06-09T11:01:36.565231" elapsed="21.864556"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:01:36.560149" elapsed="21.872486"/>
+</kw>
+<arg>'${TEST_ENV}' == 'local'</arg>
+<arg>Abrir Aplicativo Local</arg>
+<arg>ELSE IF</arg>
+<arg>'${TEST_ENV}' == 'browserstack'</arg>
+<arg>Abrir Aplicativo BrowserStack</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Variável TEST_ENV inválida: ${TEST_ENV}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-06-09T11:01:36.559867" elapsed="21.874210"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:01:36.558315" elapsed="21.876842"/>
+</kw>
+<test id="s1-s3-t1" name="Fazer login com sucesso" line="13">
+<kw name="Preencher usuário" owner="LoginPage">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-06-09T11:01:58.443007" level="INFO">Typing text 'user' into text field 'id=com.example.testapp:id/username'</msg>
+<msg time="2025-06-09T11:02:00.695800" level="INFO">criteria is com.example.testapp:id/username</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${user}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-06-09T11:01:58.441325" elapsed="2.256140"/>
+</kw>
+<arg>user</arg>
+<status status="PASS" start="2025-06-09T11:01:58.440505" elapsed="2.259870"/>
+</kw>
+<kw name="Preencher senha" owner="LoginPage">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-06-09T11:02:00.705777" level="INFO">Typing text 'password' into text field 'id=com.example.testapp:id/password'</msg>
+<msg time="2025-06-09T11:02:01.626574" level="INFO">criteria is com.example.testapp:id/password</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${senha}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-06-09T11:02:00.702966" elapsed="0.924678"/>
+</kw>
+<arg>password</arg>
+<status status="PASS" start="2025-06-09T11:02:00.701574" elapsed="0.927673"/>
+</kw>
+<kw name="Clicar login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-06-09T11:02:01.634349" level="INFO">Clicking element 'id=com.example.testapp:id/loginBtn'.</msg>
+<msg time="2025-06-09T11:02:02.549640" level="INFO">criteria is com.example.testapp:id/loginBtn</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-06-09T11:02:01.631421" elapsed="0.919528"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:02:01.629997" elapsed="0.923563"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-09T11:02:04.557201" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-09T11:02:02.554827" elapsed="2.003468"/>
+</kw>
+<kw name="Validar login bem-sucedido" owner="LoginPage">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2025-06-09T11:02:05.097133" level="INFO">criteria is com.example.testapp:id/message</msg>
+<arg>${SUCCESS_MSG}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2025-06-09T11:02:04.560647" elapsed="0.537480"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:02:04.559423" elapsed="0.540074"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:01:58.437461" elapsed="6.662645"/>
+</test>
+<test id="s1-s3-t2" name="Preencher e enviar formulário" line="21">
+<kw name="Preencher nome" owner="FormPage">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-06-09T11:02:06.220195" level="INFO">Typing text 'Nathan Guilherme' into text field 'id=com.example.testapp:id/name'</msg>
+<msg time="2025-06-09T11:02:06.840215" level="INFO">criteria is com.example.testapp:id/name</msg>
+<arg>${NOME_FIELD}</arg>
+<arg>${nome}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-06-09T11:02:06.217459" elapsed="0.624077"/>
+</kw>
+<arg>Nathan Guilherme</arg>
+<status status="PASS" start="2025-06-09T11:02:06.216782" elapsed="0.626761"/>
+</kw>
+<kw name="Preencher email" owner="FormPage">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-06-09T11:02:06.846658" level="INFO">Typing text 'nathan.gomes@teste.com' into text field 'id=com.example.testapp:id/email'</msg>
+<msg time="2025-06-09T11:02:08.243404" level="INFO">criteria is com.example.testapp:id/email</msg>
+<arg>${EMAIL_FIELD}</arg>
+<arg>${email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-06-09T11:02:06.845003" elapsed="1.399789"/>
+</kw>
+<arg>nathan.gomes@teste.com</arg>
+<status status="PASS" start="2025-06-09T11:02:06.844210" elapsed="1.403178"/>
+</kw>
+<kw name="Preencher msglivre" owner="FormPage">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-06-09T11:02:08.256179" level="INFO">Typing text 'Escrevendo aqui para teste' into text field 'id=com.example.testapp:id/message'</msg>
+<msg time="2025-06-09T11:02:09.553107" level="INFO">criteria is com.example.testapp:id/message</msg>
+<arg>${MSG_FREE}</arg>
+<arg>${msglivre}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-06-09T11:02:08.250393" elapsed="1.304724"/>
+</kw>
+<arg>Escrevendo aqui para teste</arg>
+<status status="PASS" start="2025-06-09T11:02:08.248783" elapsed="1.309609"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-09T11:02:11.563854" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-09T11:02:09.559838" elapsed="2.006468"/>
+</kw>
+<kw name="Enviar formulário" owner="FormPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-06-09T11:02:11.571903" level="INFO">Clicking element 'id=com.example.testapp:id/submitBtn'.</msg>
+<msg time="2025-06-09T11:02:12.257928" level="INFO">criteria is com.example.testapp:id/submitBtn</msg>
+<arg>${ENVIAR_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-06-09T11:02:11.568215" elapsed="0.691148"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-09T11:02:13.263949" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-09T11:02:12.262077" elapsed="1.004162"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:02:11.567458" elapsed="1.702968"/>
+</kw>
+<kw name="Validar envio com sucesso" owner="FormPage">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Verificar toast com texto" owner="FormPage">
+<kw name="Get Source" owner="AppiumLibrary">
+<msg time="2025-06-09T11:02:13.586065" level="INFO">${page_source} = &lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2106"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.example....</msg>
+<var>${page_source}</var>
+<doc>Returns the entire source of the current page.</doc>
+<status status="PASS" start="2025-06-09T11:02:13.275459" elapsed="0.314967"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-09T11:02:13.593108" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2106"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.example.testapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2106]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.example.testapp" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2106]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.example.testapp" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,75][1080,2106]" displayed="true"&gt;
+        &lt;android.view.ViewGroup index="0" package="com.example.testapp" class="android.view.ViewGroup" text="" resource-id="com.example.testapp:id/decor_content_parent" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,75][1080,2106]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.example.testapp" class="android.widget.FrameLayout" text="" resource-id="com.example.testapp:id/action_bar_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,75][1080,233]" displayed="true"&gt;
+            &lt;android.view.ViewGroup index="0" package="com.example.testapp" class="android.view.ViewGroup" text="" resource-id="com.example.testapp:id/action_bar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,75][1080,233]" displayed="true"&gt;
+              &lt;android.widget.TextView index="0" package="com.example.testapp" class="android.widget.TextView" text="TestApp" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[45,116][253,192]" displayed="true" /&gt;
+            &lt;/android.view.ViewGroup&gt;
+          &lt;/android.widget.FrameLayout&gt;
+          &lt;android.widget.FrameLayout index="1" package="com.example.testapp" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,233][1080,2106]" displayed="true"&gt;
+            &lt;android.widget.ScrollView index="0" package="com.example.testapp" class="android.widget.ScrollView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,233][1080,2106]" displayed="true"&gt;
+              &lt;android.widget.LinearLayout index="0" package="com.example.testapp" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,233][1080,1059]" displayed="true"&gt;
+                &lt;android.widget.EditText index="0" package="com.example.testapp" class="android.widget.EditText" text="Nathan Guilherme" resource-id="com.example.testapp:id/name" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[68,301][1012,427]" displayed="true" /&gt;
+                &lt;android.widget.EditText index="1" package="com.example.testapp" class="android.widget.EditText" text="nathan.gomes@teste.com" resource-id="com.example.testapp:id/email" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[68,427][1012,553]" displayed="true" /&gt;
+                &lt;android.widget.EditText index="2" package="com.example.testapp" class="android.widget.EditText" text="Escrevendo aqui para teste" resource-id="com.example.testapp:id/message" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[68,553][1012,856]" displayed="true" /&gt;
+                &lt;android.widget.Button index="3" package="com.example.testapp" class="android.widget.Button" text="ENVIAR" resource-id="com.example.testapp:id/submitBtn" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[68,856][1012,991]" displayed="true" /&gt;
+              &lt;/android.widget.LinearLayout&gt;
+            &lt;/android.widget.ScrollView&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.view.ViewGroup&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+  &lt;/android.widget.FrameLayout&gt;
+  &lt;android.widget.Toast index="1" package="com.android.settings" class="android.widget.Toast" text="Formulário enviado com sucesso!" displayed="true" /&gt;
+&lt;/hierarchy&gt;</msg>
+<arg>${page_source}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-09T11:02:13.592245" elapsed="0.002320"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${page_source}</arg>
+<arg>${mensagem}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-06-09T11:02:13.596399" elapsed="0.001336"/>
+</kw>
+<arg>${TOAST_TEXTO}</arg>
+<status status="PASS" start="2025-06-09T11:02:13.274276" elapsed="0.325320"/>
+</kw>
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Verificar toast com texto</arg>
+<arg>${TOAST_TEXTO}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-06-09T11:02:13.272909" elapsed="0.330682"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:02:13.271492" elapsed="0.333540"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:02:06.214269" elapsed="7.391468"/>
+</test>
+<kw name="Fechar Aplicativo" owner="keywords" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-06-09T11:02:14.744233" elapsed="0.007491"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:02:14.740804" elapsed="0.012003"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:01:36.548000" elapsed="35.943000"/>
+</suite>
+<suite id="s1-s4" name="Login Test 12.0, Samsung Galaxy S22 Ultra, chrome" source="/Users/nathanguilherme/Desktop/pluxe/4. Testes Automatizados para Aplicativos Móveis/test_mobile_appium_robot/tests/login_test.robot">
+<kw name="Abrir Aplicativo" owner="keywords" type="SETUP">
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:47.632719" level="INFO">${TEST_ENV} = browserstack</msg>
+<var>${TEST_ENV}</var>
+<arg>TEST_ENV</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:47.632496" elapsed="0.000487"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Abrir Aplicativo BrowserStack" owner="keywords">
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:47.633788" level="INFO">${BROWSERSTACK_USERNAME} = nathanguilherme_Gzihyx</msg>
+<var>${BROWSERSTACK_USERNAME}</var>
+<arg>BROWSERSTACK_USERNAME</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:47.633629" elapsed="0.000402"/>
+</kw>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:47.634569" level="INFO">${BROWSERSTACK_ACCESS_KEY} = ECkiasHGiQwNLkvfg4xY</msg>
+<var>${BROWSERSTACK_ACCESS_KEY}</var>
+<arg>BROWSERSTACK_ACCESS_KEY</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:47.634417" elapsed="0.000383"/>
+</kw>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-09T11:01:47.635323" level="INFO">${BROWSERSTACK_APP} = bs://79b2d23cdce01868692b1478e74bf611425957ac</msg>
+<var>${BROWSERSTACK_APP}</var>
+<arg>BROWSERSTACK_APP</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-09T11:01:47.635176" elapsed="0.000390"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-09T11:01:47.636102" level="INFO">Usando BrowserStack com usuário: nathanguilherme_Gzihyx</msg>
+<arg>Usando BrowserStack com usuário: ${BROWSERSTACK_USERNAME}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-09T11:01:47.635943" elapsed="0.000406"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-09T11:01:47.636874" level="INFO">App BrowserStack: bs://79b2d23cdce01868692b1478e74bf611425957ac</msg>
+<arg>App BrowserStack: ${BROWSERSTACK_APP}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-09T11:01:47.636723" elapsed="0.000392"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-09T11:01:47.637798" level="INFO">&amp;{desired_caps} = { platformName=Android | deviceName=Google Pixel 6 | platformVersion=12.0 | app=bs://79b2d23cdce01868692b1478e74bf611425957ac | automationName=UiAutomator2 | browserstack.user=nathanguilherme_Gzihyx |...</msg>
+<var>&amp;{desired_caps}</var>
+<arg>platformName=Android</arg>
+<arg>deviceName=${DEVICE_BSTACK}</arg>
+<arg>platformVersion=${OS_VERSION_BSTACK}</arg>
+<arg>app=${BROWSERSTACK_APP}</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>browserstack.user=${BROWSERSTACK_USERNAME}</arg>
+<arg>browserstack.key=${BROWSERSTACK_ACCESS_KEY}</arg>
+<arg>browserstack.debug=true</arg>
+<arg>browserstack.networkLogs=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-09T11:01:47.637497" elapsed="0.000540"/>
+</kw>
+<kw name="Open Application" owner="AppiumLibrary">
+<msg time="2025-06-09T11:01:47.640346" level="INFO">Completed setup!</msg>
+<arg>${REMOTE_URL_BSTACK}</arg>
+<arg>desired_capabilities=${desired_caps}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-06-09T11:01:47.638421" elapsed="21.019519"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:01:47.633471" elapsed="21.028199"/>
+</kw>
+<arg>'${TEST_ENV}' == 'local'</arg>
+<arg>Abrir Aplicativo Local</arg>
+<arg>ELSE IF</arg>
+<arg>'${TEST_ENV}' == 'browserstack'</arg>
+<arg>Abrir Aplicativo BrowserStack</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Variável TEST_ENV inválida: ${TEST_ENV}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-06-09T11:01:47.633202" elapsed="21.030325"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:01:47.631764" elapsed="21.032393"/>
+</kw>
+<test id="s1-s4-t1" name="Login com sucesso" line="11">
+<kw name="Preencher usuário" owner="LoginPage">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-06-09T11:02:08.670506" level="INFO">Typing text 'user' into text field 'id=com.example.testapp:id/username'</msg>
+<msg time="2025-06-09T11:02:10.056417" level="INFO">criteria is com.example.testapp:id/username</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${user}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-06-09T11:02:08.668685" elapsed="1.389106"/>
+</kw>
+<arg>user</arg>
+<status status="PASS" start="2025-06-09T11:02:08.667902" elapsed="1.391558"/>
+</kw>
+<kw name="Preencher senha" owner="LoginPage">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-06-09T11:02:10.065144" level="INFO">Typing text 'password' into text field 'id=com.example.testapp:id/password'</msg>
+<msg time="2025-06-09T11:02:11.419085" level="INFO">criteria is com.example.testapp:id/password</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${senha}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-06-09T11:02:10.062178" elapsed="1.358174"/>
+</kw>
+<arg>password</arg>
+<status status="PASS" start="2025-06-09T11:02:10.060639" elapsed="1.361215"/>
+</kw>
+<kw name="Clicar login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-06-09T11:02:11.425825" level="INFO">Clicking element 'id=com.example.testapp:id/loginBtn'.</msg>
+<msg time="2025-06-09T11:02:12.317271" level="INFO">criteria is com.example.testapp:id/loginBtn</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-06-09T11:02:11.423625" elapsed="0.895387"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:02:11.422660" elapsed="0.898833"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-09T11:02:15.324193" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-09T11:02:12.321915" elapsed="3.003813"/>
+</kw>
+<kw name="Validar login bem-sucedido" owner="LoginPage">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2025-06-09T11:02:15.870843" level="INFO">criteria is com.example.testapp:id/message</msg>
+<arg>${SUCCESS_MSG}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2025-06-09T11:02:15.329361" elapsed="0.542668"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:02:15.327668" elapsed="0.547465"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:02:08.665500" elapsed="7.210975"/>
+</test>
+<kw name="Fechar Aplicativo" owner="keywords" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-06-09T11:02:16.931196" elapsed="0.003925"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:02:16.928109" elapsed="0.008039"/>
+</kw>
+<status status="PASS" start="2025-06-09T11:01:47.623968" elapsed="29.314079"/>
+</suite>
+<status status="FAIL" elapsed="68.621421"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="3" skip="0">All Tests</stat>
+<stat pass="3" fail="3" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Tests" id="s1" pass="0" fail="3" skip="0">Tests</stat>
-<stat name="Form Test" id="s1-s1" pass="0" fail="2" skip="0">Tests.Form Test</stat>
-<stat name="Login Test" id="s1-s2" pass="0" fail="1" skip="0">Tests.Login Test</stat>
+<stat name="Form Test &amp; Login Test &amp; Form Test 12.0, Samsung Galaxy S22 Ultra, chrome &amp; Login Test 12.0, Samsung Galaxy S22 Ultra, chrome" id="s1" pass="3" fail="3" skip="0">Form Test &amp; Login Test &amp; Form Test 12.0, Samsung Galaxy S22 Ultra, chrome &amp; Login Test 12.0, Samsung Galaxy S22 Ultra, chrome</stat>
+<stat name="Form Test" id="s1-s1" pass="0" fail="2" skip="0">Form Test &amp; Login Test &amp; Form Test 12.0, Samsung Galaxy S22 Ultra, chrome &amp; Login Test 12.0, Samsung Galaxy S22 Ultra, chrome.Form Test</stat>
+<stat name="Login Test" id="s1-s2" pass="0" fail="1" skip="0">Form Test &amp; Login Test &amp; Form Test 12.0, Samsung Galaxy S22 Ultra, chrome &amp; Login Test 12.0, Samsung Galaxy S22 Ultra, chrome.Login Test</stat>
+<stat name="Form Test 12.0, Samsung Galaxy S22 Ultra, chrome" id="s1-s3" pass="2" fail="0" skip="0">Form Test &amp; Login Test &amp; Form Test 12.0, Samsung Galaxy S22 Ultra, chrome &amp; Login Test 12.0, Samsung Galaxy S22 Ultra, chrome.Form Test 12.0, Samsung Galaxy S22 Ultra, chrome</stat>
+<stat name="Login Test 12.0, Samsung Galaxy S22 Ultra, chrome" id="s1-s4" pass="1" fail="0" skip="0">Form Test &amp; Login Test &amp; Form Test 12.0, Samsung Galaxy S22 Ultra, chrome &amp; Login Test 12.0, Samsung Galaxy S22 Ultra, chrome.Login Test 12.0, Samsung Galaxy S22 Ultra, chrome</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-06-08T23:41:53.055442" level="WARN">Imported library '/Users/nathanguilherme/Desktop/pluxe/4. Testes Automatizados para Aplicativos Móveis/test_mobile_appium_robot/venv/lib/python3.13/site-packages/AppiumLibrary/__init__.py' contains no keywords.</msg>
-<msg time="2025-06-08T23:41:53.844238" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg time="2025-06-08T23:41:53.859577" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg time="2025-06-08T23:41:57.166514" level="WARN">Imported library '/Users/nathanguilherme/Desktop/pluxe/4. Testes Automatizados para Aplicativos Móveis/test_mobile_appium_robot/venv/lib/python3.13/site-packages/AppiumLibrary/__init__.py' contains no keywords.</msg>
-<msg time="2025-06-08T23:41:59.211653" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
-<msg time="2025-06-08T23:41:59.228477" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2025-06-09T11:01:37.791674" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2025-06-09T11:01:37.809386" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2025-06-09T11:01:43.853286" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2025-06-09T11:01:43.872161" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
 </errors>
 </robot>
