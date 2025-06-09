@@ -1,0 +1,4 @@
+robotframework 
+robotframework-appiumlibrary 
+pytest
+python-dotenv

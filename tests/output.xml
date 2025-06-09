@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.4 on darwin)" generated="2025-06-08T17:36:02.975815" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test" source="/Users/nathanguilherme/Desktop/pluxe/4. Testes Automatizados para Aplicativos Móveis/test_mobile_appium_robot/tests/login_test.robot">
+<kw name="Abrir Aplicativo BrowserStack" owner="keywords" type="SETUP">
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-08T17:36:03.048007" level="INFO">${BROWSERSTACK_USERNAME} = nathanguilherme_Gzihyx</msg>
+<var>${BROWSERSTACK_USERNAME}</var>
+<arg>BROWSERSTACK_USERNAME</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-08T17:36:03.047944" elapsed="0.000077"/>
+</kw>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-08T17:36:03.048113" level="INFO">${BROWSERSTACK_ACCESS_KEY} = ECkiasHGiQwNLkvfg4xY</msg>
+<var>${BROWSERSTACK_ACCESS_KEY}</var>
+<arg>BROWSERSTACK_ACCESS_KEY</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-08T17:36:03.048068" elapsed="0.000054"/>
+</kw>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-06-08T17:36:03.048193" level="INFO">${BROWSERSTACK_APP} = bs://79b2d23cdce01868692b1478e74bf611425957ac</msg>
+<var>${BROWSERSTACK_APP}</var>
+<arg>BROWSERSTACK_APP</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-06-08T17:36:03.048154" elapsed="0.000046"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-08T17:36:03.048273" level="INFO">USER: nathanguilherme_Gzihyx</msg>
+<arg>USER: ${BROWSERSTACK_USERNAME}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-08T17:36:03.048229" elapsed="0.000056"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-08T17:36:03.048350" level="INFO">KEY: ECkiasHGiQwNLkvfg4xY</msg>
+<arg>KEY: ${BROWSERSTACK_ACCESS_KEY}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-08T17:36:03.048312" elapsed="0.000049"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-08T17:36:03.048422" level="INFO">APP: bs://79b2d23cdce01868692b1478e74bf611425957ac</msg>
+<arg>APP: ${BROWSERSTACK_APP}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-08T17:36:03.048387" elapsed="0.000047"/>
+</kw>
+<kw name="Open Application" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2025-06-08T17:36:03.845747" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2025-06-08T17:36:03.845170" elapsed="0.009156">No application is open</status>
+</kw>
+<msg time="2025-06-08T17:36:03.855614" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2025-06-08T17:36:03.855873" level="FAIL">WebDriverException: Message: Authorization required
+</msg>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=${DEVICE}</arg>
+<arg>platformVersion=${OS_VERSION}</arg>
+<arg>app=${BROWSERSTACK_APP}</arg>
+<arg>browserstack.user=${BROWSERSTACK_USERNAME}</arg>
+<arg>browserstack.key=${BROWSERSTACK_ACCESS_KEY}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="FAIL" start="2025-06-08T17:36:03.048460" elapsed="0.808691">WebDriverException: Message: Authorization required
+</status>
+</kw>
+<status status="FAIL" start="2025-06-08T17:36:03.047714" elapsed="0.809636">WebDriverException: Message: Authorization required
+</status>
+</kw>
+<test id="s1-t1" name="Login com sucesso" line="11">
+<status status="FAIL" start="2025-06-08T17:36:03.857472" elapsed="0.000458">Parent suite setup failed:
+WebDriverException: Message: Authorization required
+</status>
+</test>
+<kw name="Fechar Aplicativo" owner="keywords" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<msg time="2025-06-08T17:36:03.859180" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2025-06-08T17:36:03.859047" elapsed="0.001032">No application is open</status>
+</kw>
+<msg time="2025-06-08T17:36:03.860889" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2025-06-08T17:36:03.861023" level="FAIL">No application is open</msg>
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="FAIL" start="2025-06-08T17:36:03.858870" elapsed="0.002900">No application is open</status>
+</kw>
+<status status="FAIL" start="2025-06-08T17:36:03.858604" elapsed="0.003306">No application is open</status>
+</kw>
+<status status="FAIL" start="2025-06-08T17:36:02.976649" elapsed="0.885326">Suite setup failed:
+WebDriverException: Message: Authorization required
+
+
+Also suite teardown failed:
+No application is open</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Test" id="s1" pass="0" fail="1" skip="0">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-06-08T17:36:03.044412" level="WARN">Imported library '/Users/nathanguilherme/Desktop/pluxe/4. Testes Automatizados para Aplicativos Móveis/test_mobile_appium_robot/venv/lib/python3.13/site-packages/AppiumLibrary/__init__.py' contains no keywords.</msg>
+<msg time="2025-06-08T17:36:03.855614" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg time="2025-06-08T17:36:03.860889" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>

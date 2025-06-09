@@ -1,0 +1,30 @@
+name: Testes E2E Mobile
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test-android:
+    runs-on: ubuntu-latest
+
+    env:
+      BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+      BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+      BROWSERSTACK_APP: ${{ secrets.BROWSERSTACK_APP }}
+      TEST_ENV: browserstack
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Instalar dependências
+        run: |
+          pip install -r requirements.txt
+          # ou instale diretamente:
+          # pip install robotframework Appium-Python-Client robotframework-appiumlibrary
+
+      - name: Rodar testes Robot
+        run: |
+          robot -d results tests/
