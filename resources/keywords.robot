@@ -11,23 +11,23 @@ ${OS_VERSION_LOCAL}       16.0
 ${APP_LOCAL}              /Users/nathanguilherme/Desktop/app-debug.apk
 
 *** Keywords ***
-# Abrir Aplicativo
-#     ${TEST_ENV}    Get Environment Variable    TEST_ENV
-#     Run Keyword If    '${TEST_ENV}' == 'local'         Abrir Aplicativo Local
-#     ...               ELSE IF    '${TEST_ENV}' == 'browserstack'    Abrir Aplicativo BrowserStack
-#     ...               ELSE    Fail    Variável TEST_ENV inválida: ${TEST_ENV}
-
-# Abrir Aplicativo Local
-#     Open Application    ${REMOTE_URL_LOCAL}
-#     ...    platformName=Android
-#     ...    deviceName=${DEVICE_LOCAL}
-#     ...    platformVersion=${OS_VERSION_LOCAL}
-#     ...    app=${APP_LOCAL}
-#     ...    automationName=UiAutomator2
-
 Abrir Aplicativo
+    ${TEST_ENV}    Get Environment Variable    TEST_ENV
+    Run Keyword If    '${TEST_ENV}' == 'local'         Abrir Aplicativo Local
+    ...               ELSE IF    '${TEST_ENV}' == 'browserstack'    Abrir Aplicativo BrowserStack
+    ...               ELSE    Fail    Variável TEST_ENV inválida: ${TEST_ENV}
+
+Abrir Aplicativo Local
+    Open Application    ${REMOTE_URL_LOCAL}
+    ...    platformName=Android
+    ...    deviceName=${DEVICE_LOCAL}
+    ...    platformVersion=${OS_VERSION_LOCAL}
+    ...    app=${APP_LOCAL}
+    ...    automationName=UiAutomator2
+
+Abrir Aplicativo BrowserStack
     Open Application    ${REMOTE_URL_BSTACK}
-    #❗NÃO definir capabilities aqui — o SDK do BrowserStack cuida disso via browserstack.yml
+    # ❗NÃO definir capabilities aqui — o SDK do BrowserStack cuida disso via browserstack.yml
 
 Fechar Aplicativo
     Close Application

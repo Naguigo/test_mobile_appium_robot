@@ -65,9 +65,10 @@ browserstackAccessKey: ECkiasHGiQwNLkvfg4xY
 app: bs://79b2d23cdce01868692b1478e74bf611425957ac # Ex: bs://a1b2c3d4e5f6g7h8i9j0
 
 devices:
-  - deviceName: Google Pixel 6
+  - deviceName: Samsung Galaxy S22 Ultra
     osVersion: 12.0
     platformName: android
+    automationName: UiAutomator2
 
 projectName: Projeto Teste
 buildName: Build - Nathan

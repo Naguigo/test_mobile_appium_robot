@@ -24,6 +24,8 @@ jobs:
           pip install -r requirements.txt
           # ou instale diretamente:
           # pip install robotframework Appium-Python-Client robotframework-appiumlibrary
+          pip install -U robotframework robotframework-pabot robotframework-seleniumlibrary
+
 
       - name: Run Robot tests via BrowserStack SDK
         run: browserstack-sdk robot tests/
