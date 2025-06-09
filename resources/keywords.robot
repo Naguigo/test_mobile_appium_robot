@@ -25,8 +25,8 @@ ${APP_LOCAL}              /Users/nathanguilherme/Desktop/app-debug.apk
 #     ...    app=${APP_LOCAL}
 #     ...    automationName=UiAutomator2
 
-Abrir Aplicativo
-    Open Application    ${REMOTE_URL_BSTACK}
+# Abrir Aplicativo
+    # Open Application    ${REMOTE_URL_BSTACK}
     # ❗NÃO definir capabilities aqui — o SDK do BrowserStack cuida disso via browserstack.yml
 
 Fechar Aplicativo

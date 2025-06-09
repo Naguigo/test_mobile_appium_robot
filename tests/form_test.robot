@@ -5,7 +5,7 @@ Resource          ../pages/FormPage.robot
 Resource    ../resources/keywords.robot
 Resource    ../pages/LoginPage.robot
 
-Suite Setup       Abrir Aplicativo
+Suite Setup      Log    Setup pelo SDK do BrowserStack
 Suite Teardown    Fechar Aplicativo
 
 
