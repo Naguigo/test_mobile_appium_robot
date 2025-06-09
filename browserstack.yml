@@ -20,6 +20,9 @@ buildName: browserstack build
 # ${DATE_TIME}: Generates a Timestamp with every execution. Eg. 05-Nov-19:30
 # Read more about buildIdentifiers here -> https://www.browserstack.com/docs/automate/selenium/organize-tests
 buildIdentifier: '#${BUILD_NUMBER}' # Supports strings along with either/both ${expression}
+testObservability: false
+disableAutoCaptureLogs: true
+disableObservability: true
 
 # =======================================
 # Platforms (Browsers / Devices to test)
@@ -34,7 +37,7 @@ platforms:
   - deviceName: Samsung Galaxy S22 Ultra
     browserName: chrome # Try 'samsung' for Samsung browser
     osVersion: 12.0
-    disableAutoCaptureLogs: true
+
 # ==========================================
 # BrowserStack Local
 # (For localhost, staging/private websites)
